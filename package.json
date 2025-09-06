@@ -1,0 +1,31 @@
+{
+  "name": "namaste_react",
+  "version": "1.0.0",
+  "description": "This is my react project 1",
+  "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anuj27aKamboj/My_REACT.git"
+  },
+  "keywords": [],
+  "author": "anuj kamboj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anuj27aKamboj/My_REACT/issues"
+  },
+  "homepage": "https://github.com/Anuj27aKamboj/My_REACT#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "browserslist":[
+    "last 2 versions"
+  ]
+}
