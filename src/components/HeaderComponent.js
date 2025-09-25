@@ -4,7 +4,7 @@ export const HeaderComponent = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        <img className="logo-img" src="/image-new.jpg" alt="logo image" />
+        <img className="logo-img" src="https://github.com/Anuj27aKamboj/grYp/blob/main/public/image-new.jpg?raw=true" alt="logo image" />
         <h1>grYp</h1>
       </div>
       <div className="nav-items">

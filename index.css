@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     background-color: #e4e4e7;
-    color: #334155;
+    color: #0f172a;
     padding: 0px 15px ;
     width: 99%;
     height: 80px;
@@ -22,20 +22,17 @@
 }
 
 .logo-container{
-    width: 52%;
+    width: 30%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     /* background-color: aquamarine; */
 }
 
-.logo-container>h1{
-    /* margin-top: 12px; */
-}
-
 .logo-img{
-    width: 75px;
-    /* background-color: black; */
+    height: 50px;
     border-radius: 50px;
+    margin-left: 80px;
+    margin-right: 10px;
 }
 
 .nav-items{
@@ -57,14 +54,10 @@
 }
 
 .body{
-    margin-top: 100px;
+    margin-top: 120px;
 }
 
-.search{
-    padding: 10px;
-    width: 100px;
-    margin: 10px auto;
-}
+
 
 .res-container{
     padding: 5px 20px;
@@ -73,6 +66,8 @@
     width: 80%;
     justify-content: center;
     margin: auto;
+    /* background-color: bisque; */
+    margin-top: 25px;
 }
 
 .res-card{
@@ -118,5 +113,45 @@
     position: relative;
     top: -30px;
 }
+
+.search{
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    margin: 10px auto;
+    padding: auto;
+}
+
+.search-input{
+    padding: 5px;
+}
+
+.search-btn{
+    padding:5px;
+    margin: 0px 5px;
+    border-radius: 15px;
+    border-style: none;
+    background-color:#e4e4e7;
+    color:#0f172a;
+}
+
+.filter-btn{
+    background-color: #0f172a;
+    color: #e4e4e7;
+    margin: 10px;
+    position: absolute;
+    right: 30px;
+    top: 120px;
+    padding: 8px;
+    border-radius: 15px;
+    border-style: none;
+}
+
+.filter-btn:hover{
+    cursor: pointer;
+}
+
+
+
 
 
