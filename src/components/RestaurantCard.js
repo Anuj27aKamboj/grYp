@@ -12,7 +12,6 @@ export const RestaurantCard = (props) => {
         <h3>{name}</h3>
       </div>
       <div className="res-content">
-
         <h5>{cuisines.join(", ")}</h5>
         <h5>{avgRating}  ☆</h5>
         <h5>Delivery: {sla.deliveryTime} min</h5>
