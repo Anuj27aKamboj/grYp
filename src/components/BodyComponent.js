@@ -10,7 +10,7 @@ export const BodyComponent = () => {
   const [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  const internetStatus = useInternetStatus;
+  const internetStatus = useInternetStatus();
 
   useEffect(() => {
     fetchData();
@@ -34,6 +34,9 @@ export const BodyComponent = () => {
 
   return listOfRestaurants.length === 0 ? (<ShimmerCommponent />) : (
     <div className="body">
+      <div className="internet-status">
+        {internetStatus}
+      </div>
       <div className="search">
         <input
           type="text"
@@ -70,7 +73,6 @@ export const BodyComponent = () => {
           <Link key={restaurant.info.id} to={"restaurants/"+restaurant.info.id}><RestaurantCard resData={restaurant} /></Link>
         ))}{" "}
       </div>
-      <img src={internetStatus}/>
     </div>
   );
 };

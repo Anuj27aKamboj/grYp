@@ -249,6 +249,14 @@
     background-color: #f1f5f9
 }
 
+.internet-status{
+   height: 35px;
+   position: fixed;
+   left: 0px;
+   top: 110px;
+   margin: 10px;
+}
+
 
 
 

@@ -1,19 +1,21 @@
-import React, {use, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 const useInternetStatus = () => {
-    const [ineternetStatus, setInternetStatus ] = useState("/online.png");
+    const [internetStatus, setInternetStatus ] = useState("🟢");
+
+    // console.log(ineternetStatus);
 
     useEffect(()=>{
         window.addEventListener("offline", ()=>{
-            setInternetStatus("/offline.png")
+            setInternetStatus("🔴")
         });
 
-        window.addEventListener("offline", ()=>{
-            setInternetStatus("/online.png")
+        window.addEventListener("online", ()=>{
+            setInternetStatus("🟢")
         });
     },[]);
 
-  return ineternetStatus;
+  return internetStatus;
 }
 
 export default useInternetStatus;
