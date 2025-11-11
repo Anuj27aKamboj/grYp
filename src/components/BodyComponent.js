@@ -3,11 +3,14 @@ import { RestaurantCard } from "./RestaurantCard";
 import ShimmerCommponent from "./ShimmerCommponent";
 import { resAPI } from "../../utils/constants";
 import { Link } from "react-router-dom";
+import useInternetStatus from "../../utils/useInternetStatus";
 
 export const BodyComponent = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const internetStatus = useInternetStatus;
 
   useEffect(() => {
     fetchData();
@@ -67,6 +70,7 @@ export const BodyComponent = () => {
           <Link key={restaurant.info.id} to={"restaurants/"+restaurant.info.id}><RestaurantCard resData={restaurant} /></Link>
         ))}{" "}
       </div>
+      <img src={internetStatus}/>
     </div>
   );
 };

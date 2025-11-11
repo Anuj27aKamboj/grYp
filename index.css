@@ -243,6 +243,12 @@
     align-content: center;
 }
 
+.user-card{
+    margin: 10px;
+    border-radius: 15px;
+    background-color: #f1f5f9
+}
+
 
 
 
