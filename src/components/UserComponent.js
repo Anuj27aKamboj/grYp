@@ -38,7 +38,7 @@ class UserComponent extends React.Component{
 
         console.log(this.props.name+" Child Render")
 
-        return <div className="user-card">
+        return <div className="m-2.5 rounded-[15px] bg-[#f1f5f9]">
             <img src={avatar_url}/>
             <h2>{login}</h2>
             <h2>Likes: {likeCount}</h2>
