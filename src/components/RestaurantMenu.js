@@ -1,37 +1,64 @@
-import useRestaurantMenu from '../../utils/useRestaurantMenu';
-import ShimmerCommponent from './ShimmerCommponent';
-import { useParams } from 'react-router';
+import { useState } from "react";
+import useRestaurantMenu from "../../utils/useRestaurantMenu";
+import ItemCategory from "./ItemCategory";
+import ShimmerCommponent from "./ShimmerCommponent";
+import { useParams } from "react-router";
 
 const RestaurantMenu = () => {
-    const {resId} = useParams();
+  const { resId } = useParams();
 
-    console.log(resId);
+  const [showIndex, setShowIndex] = useState(0);
 
-    const resInfo = useRestaurantMenu(resId)
+  //   console.log(resId);
 
-    if(resInfo === null){
-    return <ShimmerCommponent />};
+  const resInfo = useRestaurantMenu(resId);
 
-    const{name, cuisines, cloudinaryImageId, costForTwoMessage} = resInfo?.cards[2]?.card?.card?.info;
+  if (resInfo === null) {
+    return <ShimmerCommponent />;
+  }
 
-    const {itemCards } = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-    console.log(itemCards);
+  const { name, avgRatingString, totalRatingsString, costForTwoMessage } =
+    resInfo?.cards[2]?.card?.card?.info;
 
+  const { itemCards } =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+  //   console.log(itemCards);
+
+  const categories =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c?.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+  //   console.log(categories);
 
   return (
-    <div className='p-5 w-[80%] justify-center m-auto mt-[150px] content-center'>
-        <div className='menu-info'>
-            <h1>{name}</h1>
-            <div><span>{cuisines.join(", ")} </span><span>- {costForTwoMessage}</span></div>
+    <div className="p-5 w-6/12 justify-center mx-auto mt-[100px] text-slate-900">
+      <div className="text-center mb-4">
+        <h1 className="font-extrabold text-3xl mb-4">{name}</h1>
+        <div className="font-bold text-[13px]">
+          {/* <span className="font-bold">{cuisines.join(", ")} </span> */}
+          <span>
+            ✪ {avgRatingString}({totalRatingsString}){" "}
+          </span>
+          <span>
+            <span className="text-slate-500"> • </span>
+            {costForTwoMessage}
+          </span>
         </div>
-        <div className='menu-items'>
-            <ul>
-                {itemCards.map(menuItem=><li key={menuItem?.card?.info?.name}>{menuItem?.card?.info?.name} - {"Rs. "} {menuItem?.card?.info?.price/100 || menuItem?.card?.info?.defaultPrice/100}</li>)}
-            </ul>
-        </div>
-        
+      </div>
+      <div className="mt-8">
+        {categories.map((category, index) => (
+          <ItemCategory
+            key={category?.card?.card?.title}
+            categoryData={category?.card?.card}
+            showItems={index === showIndex}
+            setShowIndex={()=>setShowIndex(prevIndex => prevIndex === index? null:index)}
+          />
+        ))}
+      </div>
     </div>
-  )
+  );
 };
 
-export default RestaurantMenu
+export default RestaurantMenu;

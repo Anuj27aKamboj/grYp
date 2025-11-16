@@ -12,7 +12,7 @@ export const HeaderComponent = () => {
           src="https://github.com/Anuj27aKamboj/grYp/blob/main/public/image-new.jpg?raw=true"
           alt="logo image"
         />
-        <h1>grYp</h1>
+        <h1 className="text-4xl">grYp</h1>
       </div>
       <div className="pr-1.5">
         <ul className="flex justify-between items-center list-none p-[5px]">
@@ -32,7 +32,7 @@ export const HeaderComponent = () => {
             Cart
           </li>
           <button
-            className="py-[5px] px-[15px] mx-[5px] rounded-[10px] border-none bg-slate-900 text-slate-100"
+            className="py-2.5 px-3.5 m-2.5 rounded-[15px] border-none bg-slate-900 text-slate-100"
             onClick={() => {
               loginBtn === "login"
                 ? setLoginBtn("logout")
