@@ -68,7 +68,7 @@ export const BodyComponent = () => {
           Search
         </button>
       </div>
-      <div className="bg-lime-500">
+      <div className="">
         <button
           className="absolute right-0 top-[110px] m-2 p-3 rounded-[10px] border-none bg-slate-900 text-slate-100 hover:cursor-pointer"
           onClick={() => {

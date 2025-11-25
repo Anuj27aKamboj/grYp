@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ItemListAccordion from './ItemListAccordion'
+import ItemListAccordion  from './ItemListAccordion'
 
 const ItemCategory = ({categoryData, showItems, setShowIndex}) => {
 
@@ -15,7 +15,7 @@ const ItemCategory = ({categoryData, showItems, setShowIndex}) => {
             <span className="text-3xl">{showItems?"˄":"˅"}</span>
         </div>
         <div>
-            { showItems && <ItemListAccordion items={categoryData?.itemCards}/>}
+            { showItems && <ItemListAccordion  items={categoryData?.itemCards}/>}
         </div>
     </div>
   )

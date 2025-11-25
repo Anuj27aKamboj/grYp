@@ -49,3 +49,14 @@ constructor(props) {
 
 
 ✅ This means you can set the initial state based on props before the first render.
+
+
+
+# Setting up testing in our app:
+- Install React Testing Library
+- Instaled jest
+- Installed Babel Dependencies
+- Configure Babel
+- Configure Parcel Config file to disable default babel transpilation
+- Jest Configuration (npx create-jest)
+- Install jsdom library
