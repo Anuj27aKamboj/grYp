@@ -60,3 +60,6 @@ constructor(props) {
 - Configure Parcel Config file to disable default babel transpilation
 - Jest Configuration (npx create-jest)
 - Install jsdom library
+- Install @babel/preset-react: to make JSX work in test cases (it conerts JSX to HTML)
+- Include @babel/preset-react inside babel.config.js
+- install @testing-library/jest-dom
