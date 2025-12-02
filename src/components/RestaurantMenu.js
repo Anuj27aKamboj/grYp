@@ -13,6 +13,8 @@ const RestaurantMenu = () => {
 
   const resInfo = useRestaurantMenu(resId);
 
+  console.log(resInfo);
+
   if (resInfo === null) {
     return <ShimmerCommponent />;
   }

@@ -28,8 +28,8 @@ const ItemListAccordion = ({ items }) => {
           className="py-4 border-b border-slate-300"
         >
           {/* Top row: name/price + image */}
-          <div className="flex justify-between items-start">
-            <div className="flex flex-col">
+          <div className="grid grid-flow-col">
+            <div className="flex flex-col col-span-10">
               <span className="font-medium">{item?.card?.info?.name}</span>
               <span className="text-sm text-slate-600">
                 ₹ {item?.card?.info?.price / 100}
@@ -39,7 +39,7 @@ const ItemListAccordion = ({ items }) => {
               </p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center col-span-1">
               <img
                 src={imgURL + item?.card?.info?.imageId}
                 className="w-22 h-22 object-cover rounded-lg"

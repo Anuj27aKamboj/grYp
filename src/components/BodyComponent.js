@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { RestaurantCard, withPromotedLabel } from "./RestaurantCard";
 import ShimmerCommponent from "./ShimmerCommponent";
-import { resAPI } from "../../utils/constants";
+import { resAPI, resAPI2 } from "../../utils/constants";
 import { Link } from "react-router-dom";
 import useInternetStatus from "../../utils/useInternetStatus";
 
@@ -19,7 +19,7 @@ export const BodyComponent = () => {
   }, []);
 
   const fetchData = async () => {
-    const response = await fetch(resAPI);
+    const response = await fetch(resAPI2);
     const jsonData = await response.json();
 
     setListOfRestaurants(
